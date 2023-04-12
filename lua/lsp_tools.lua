@@ -30,8 +30,8 @@ local augroup = function(group, augroup_opts)
 end
 
 function M.on_attach(client, bufnr)
-    local MY_LSP_AUGROUP = augroup('MY_LSP_AUGROUP', {})
-    MY_LSP_AUGROUP(function(autocmd, clear)
+    local LSP_TOOLS_AUGROUP = augroup('LSP_TOOLS_AUGROUP', {})
+    LSP_TOOLS_AUGROUP(function(autocmd, clear)
         clear { buffer = bufnr }
 
         autocmd({ 'BufEnter', 'CursorHold', 'InsertLeave' }, {
