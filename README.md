@@ -19,4 +19,4 @@ require('lsp_tools').on_attach(client, bufnr)
 
 - [VidocqH/lsp-lens.nvim](https://github.com/VidocqH/lsp-lens.nvim)
 - [chikko80/error-lens.nvim](https://github.com/chikko80/error-lens.nvim)
-
+- [lvimuser/lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
