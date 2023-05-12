@@ -34,7 +34,7 @@ function M.on_attach(client, bufnr)
     LSP_TOOLS_AUGROUP(function(autocmd, clear)
         clear { buffer = bufnr }
 
-        autocmd({ 'BufEnter', 'InsertLeave' }, {
+        autocmd({ 'BufRead', 'BufWrite' }, {
             buffer = bufnr,
             callback = function()
                 if client.server_capabilities.codeLensProvider then
