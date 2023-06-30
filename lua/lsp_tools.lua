@@ -34,7 +34,7 @@ function M.on_attach(client, bufnr)
     LSP_TOOLS_AUGROUP(function(autocmd, clear)
         clear { buffer = bufnr }
 
-        autocmd({ 'BufRead', 'BufWrite' }, {
+        autocmd({ 'CursorHold', 'BufRead', 'BufWrite' }, {
             buffer = bufnr,
             callback = function()
                 if client.server_capabilities.codeLensProvider then
@@ -43,6 +43,10 @@ function M.on_attach(client, bufnr)
 
                 if client.server_capabilities.document_highlight then
                     vim.lsp.buf.document_highlight()
+                end
+
+                if client.server_capabilities.inlayHintProvider then
+                    vim.lsp.inlay_hint(bufnr, true)
                 end
             end,
         })
