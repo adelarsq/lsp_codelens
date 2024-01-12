@@ -46,7 +46,7 @@ function M.on_attach(client, bufnr)
                 end
 
                 if client.server_capabilities.inlayHintProvider then
-                    vim.lsp.inlay_hint(bufnr, true)
+                    vim.lsp.inlay_hint.enable(0, true)
                 end
             end,
         })
@@ -55,6 +55,7 @@ function M.on_attach(client, bufnr)
             buffer = bufnr,
             callback = function(opt)
                 vim.lsp.codelens.clear(opt.data.client_id, opt.buf)
+                vim.lsp.inlay_hint.enable(0, false)
             end
         })
     end)
