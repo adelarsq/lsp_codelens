@@ -1,5 +1,7 @@
 # lsp_tools
 
+> Note: It's easier to use autocmds on current Neovim nightly than before. So there is no need for this plugin anymore. Archiving for reasearch pourpouses only.
+
 Provide some tools for a better Neovim experience with LSP.
 
 # Features
